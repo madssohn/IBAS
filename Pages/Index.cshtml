@@ -8,3 +8,61 @@
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Menu for Næste Uge</title>
+</head>
+<body>
+	<h1>Menu for Næste Uge</h1>
+	<table>
+		<tr>
+			<th>Dag</th>
+			<th>Varm Ret</th>
+			<th>Kold Ret</th>
+		</tr>
+		<tr>
+			<td>Mandag</td>
+			<td>Kylling i karry</td>
+			<td>Cæsarsalat</td>
+		</tr>
+		<tr>
+			<td>Tirsdag</td>
+			<td>Pasta med kødsovs</td>
+			<td>Tunmousse</td>
+		</tr>
+		<tr>
+			<td>Onsdag</td>
+			<td>Stegt flæsk med persillesovs</td>
+			<td>Grøntsagsstænger</td>
+		</tr>
+		<tr>
+			<td>Torsdag</td>
+			<td>Fiskefrikadeller med remoulade</td>
+			<td>Tomat- og mozzarellasalat</td>
+		</tr>
+		<tr>
+			<td>Fredag</td>
+			<td>Pizza</td>
+			<td>Pastasalat</td>
+		</tr>
+	</table>
+</body>
+</html>
+
+
+webappname=ibas-menu-webapp-$RANDOM echo $webappname
+
+az group create --location eastus --name IBASMenuRG 
+
+az appservice plan create --name $webappname --resource-group IBASMenuRG  --is-linux --sku FREE 
+
+
+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
+
+<mit_repo_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> 
+
+
+    az webapp deployment source config --name $webappname --resource-group IBASMenuRG --repository-type github --repo-url https://github.com/madssohn/IBAS.git --branch main --git-token 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
+
